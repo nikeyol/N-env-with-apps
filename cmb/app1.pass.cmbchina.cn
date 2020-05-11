@@ -1,0 +1,34 @@
+ upstream  app1.paas.cmbchina.com {
+
+  zone upstream_zone_app1.paas.cmbchina.com 64k;
+  server 10.128.4.214:80  slow_start=30s;
+  sticky cookie cookie.app1.paas.cmbchina.com;
+  keepalive 64;
+
+}
+
+match match_app1.paas.cmbchina.com_ok {
+        status 200;       
+}
+
+server {
+
+        listen 127.0.0.1:80;
+        server_name internal.healthchecks.config.server.do.not.edit.test;
+        location / {
+            return 444;
+        }
+
+        location @app1.paas.cmbchina.com {
+            health_check uri=/ match=match_app1.paas.cmbchina.com_ok interval=5 fails=3 passes=3 port=80 mandatory;
+            proxy_set_header Host app1.paas.cmbchina.com;
+            access_log /var/log/nginx/health_check.log main;
+            proxy_pass http://app1.paas.cmbchina.com;
+        }
+
+        
+    }
+
+
+
+

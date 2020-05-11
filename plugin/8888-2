@@ -1,0 +1,75 @@
+[root@nginx-controller ~]#
+[root@nginx-controller ~]# cat !$
+cat /var/log/nginx/error.log
+
+2020/04/21 19:10:58 [debug] 69511#69511: accept on 0.0.0.0:8888, ready: 0
+2020/04/21 19:10:58 [debug] 69513#69513: accept on 0.0.0.0:8888, ready: 0
+2020/04/21 19:10:58 [debug] 69514#69514: accept on 0.0.0.0:8888, ready: 0
+2020/04/21 19:10:58 [debug] 69510#69510: accept on 0.0.0.0:8888, ready: 0
+2020/04/21 19:10:58 [debug] 69509#69509: accept on 0.0.0.0:8888, ready: 0
+2020/04/21 19:10:58 [debug] 69512#69512: accept on 0.0.0.0:8888, ready: 0
+2020/04/21 19:10:58 [debug] 69514#69514: posix_memalign: 00005581EE293560:512 @16
+2020/04/21 19:10:58 [debug] 69514#69514: *25 accept: 172.16.100.203:37660 fd:10
+2020/04/21 19:10:58 [debug] 69512#69512: accept() not ready (11: Resource temporarily unavailable)
+2020/04/21 19:10:58 [debug] 69509#69509: accept() not ready (11: Resource temporarily unavailable)
+2020/04/21 19:10:58 [debug] 69510#69510: accept() not ready (11: Resource temporarily unavailable)
+2020/04/21 19:10:58 [debug] 69514#69514: *25 event timer add: 10: 60000:4020350
+2020/04/21 19:10:58 [debug] 69513#69513: accept() not ready (11: Resource temporarily unavailable)
+2020/04/21 19:10:58 [debug] 69514#69514: *25 reusable connection: 1
+2020/04/21 19:10:58 [debug] 69514#69514: *25 epoll add event: fd:10 op:1 ev:80002001
+2020/04/21 19:10:58 [debug] 69511#69511: accept() not ready (11: Resource temporarily unavailable)
+2020/04/21 19:10:58 [debug] 69514#69514: *25 http wait request handler
+2020/04/21 19:10:58 [debug] 69514#69514: *25 malloc: 00005581EE2531A0:1024
+2020/04/21 19:10:58 [debug] 69514#69514: *25 recv: eof:0, avail:-1
+2020/04/21 19:10:58 [debug] 69514#69514: *25 recv: fd:10 118 of 1024
+2020/04/21 19:10:58 [debug] 69514#69514: *25 reusable connection: 0
+2020/04/21 19:10:58 [debug] 69514#69514: *25 posix_memalign: 00005581EE2CB850:4096 @16
+2020/04/21 19:10:58 [debug] 69514#69514: *25 http process request line
+2020/04/21 19:10:58 [info] 69514#69514: *25 client sent invalid request while reading client request line, client: 172.16.100.203, server: , request: "CONNECT www.baidu.com:443 HTTP/1.1"
+2020/04/21 19:10:58 [debug] 69514#69514: *25 http finalize request: 400, "?" a:1, c:1
+2020/04/21 19:10:58 [debug] 69514#69514: *25 event timer del: 10: 4020350
+2020/04/21 19:10:58 [debug] 69514#69514: *25 http special response: 400, "?"
+2020/04/21 19:10:58 [debug] 69514#69514: *25 http set discard body
+2020/04/21 19:10:58 [debug] 69514#69514: *25 HTTP/1.1 400 Bad Request
+Server: nginx
+Date: Tue, 21 Apr 2020 11:10:58 GMT
+Content-Type: text/html
+Content-Length: 150
+Connection: close
+
+2020/04/21 19:10:58 [debug] 69514#69514: *25 write new buf t:1 f:0 00005581EE2CC6E0, pos 00005581EE2CC6E0, size: 145 file: 0, size: 0
+2020/04/21 19:10:58 [debug] 69514#69514: *25 http write filter: l:0 f:0 s:145
+2020/04/21 19:10:58 [debug] 69514#69514: *25 http output filter "?"
+2020/04/21 19:10:58 [debug] 69514#69514: *25 http copy filter: "?"
+2020/04/21 19:10:58 [debug] 69514#69514: *25 posix_memalign: 00005581EE2CC860:4096 @16
+2020/04/21 19:10:58 [debug] 69514#69514: *25 http postpone filter "?" 00005581EE2CC838
+2020/04/21 19:10:58 [debug] 69514#69514: *25 write old buf t:1 f:0 00005581EE2CC6E0, pos 00005581EE2CC6E0, size: 145 file: 0, size: 0
+2020/04/21 19:10:58 [debug] 69514#69514: *25 write new buf t:0 f:0 0000000000000000, pos 00005581EDE225C0, size: 104 file: 0, size: 0
+2020/04/21 19:10:58 [debug] 69514#69514: *25 write new buf t:0 f:0 0000000000000000, pos 00005581EDE22B00, size: 46 file: 0, size: 0
+2020/04/21 19:10:58 [debug] 69514#69514: *25 http write filter: l:1 f:0 s:295
+2020/04/21 19:10:58 [debug] 69514#69514: *25 http write filter limit 0
+2020/04/21 19:10:58 [debug] 69514#69514: *25 writev: 295 of 295
+2020/04/21 19:10:58 [debug] 69514#69514: *25 http write filter 0000000000000000
+2020/04/21 19:10:58 [debug] 69514#69514: *25 http copy filter: 0 "?"
+2020/04/21 19:10:58 [debug] 69514#69514: *25 http finalize request: 0, "?" a:1, c:1
+2020/04/21 19:10:58 [debug] 69514#69514: *25 event timer add: 10: 5000:3965350
+2020/04/21 19:10:58 [debug] 69514#69514: *25 http lingering close handler
+2020/04/21 19:10:58 [debug] 69514#69514: *25 recv: eof:1, avail:-1
+2020/04/21 19:10:58 [debug] 69514#69514: *25 recv: fd:10 0 of 4096
+2020/04/21 19:10:58 [debug] 69514#69514: *25 lingering read: 0
+2020/04/21 19:10:58 [debug] 69514#69514: *25 http request count:1 blk:0
+2020/04/21 19:10:58 [debug] 69514#69514: *25 http close request
+2020/04/21 19:10:58 [debug] 69514#69514: *25 http log handler
+2020/04/21 19:10:58 [debug] 69514#69514: *25 http map started
+2020/04/21 19:10:58 [debug] 69514#69514: *25 http script var: ""
+2020/04/21 19:10:58 [debug] 69514#69514: *25 http map: "" "-"
+2020/04/21 19:10:58 [debug] 69514#69514: *25 http session log handler
+2020/04/21 19:10:58 [debug] 69514#69514: *25 free: 00005581EE2CB850, unused: 8
+2020/04/21 19:10:58 [debug] 69514#69514: *25 free: 00005581EE2CC860, unused: 3661
+2020/04/21 19:10:58 [debug] 69514#69514: *25 close http connection: 10
+2020/04/21 19:10:58 [debug] 69514#69514: *25 event timer del: 10: 3965350
+2020/04/21 19:10:58 [debug] 69514#69514: *25 reusable connection: 0
+2020/04/21 19:10:58 [debug] 69514#69514: *25 free: 00005581EE2531A0
+2020/04/21 19:10:58 [debug] 69514#69514: *25 free: 00005581EE293560, unused: 136
+[root@nginx-controller ~]#
+[root@nginx-controller ~]#
